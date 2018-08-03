@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="utils.js"></script>
+  <script src="production_form.js"></script>
+  <title>Enter Item Form </title>
+</head>
+
+<body>
+  <!-- Ingredient Form -->
+  <div id="recipe_table_div">
+    <form>
+      <label for='select_product_dropdown'> Select Item </label> </br>
+      <select id="select_product_dropdown" class="select_item">
+              <option value="" disabled selected>Select Product</option>
+      </select></br>
+      <table id="recipe_table">
+        <tbody> </tbody>
+      </table>
+      <input type="submit" value="Submit">
+      <button id="form_reset_button" type="reset">Reset</button>
+    </form>
+  </div>
+
+</body>
+
+</html>

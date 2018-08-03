@@ -1,0 +1,59 @@
+<!DOCTYPE html> 
+
+<html>
+
+    <head> 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <title>Enter Recipe Form </title>
+        <style src="RecipeForm.css" type="text/css"> </style> 
+        <script>
+            $(document).ready(function(){
+
+                
+                $("button[id=add_ingredient]").click(function(){
+                    var $table = $('#table');
+                    var $row = $('#table_row');
+                    var $rowClone = $row.clone(); // Clone table row
+                    $rowClone.find('input').val(""); // Remove values of inputs in cloned row
+                    $table.append($rowClone); // Append row to table 
+                    $rowClone.append('<button type="button" name="delete_button" onClick="delete_row(this)"> - </button>');
+                });
+            });
+            
+        </script>
+    </head>
+
+    <body>
+        <h1> Enter New Recipe </h1>
+        <input type="text" name="itemName" placeholder="Enter Item Name"/> 
+        <table id="table">
+            <tr id="table_row">
+                <td> <input id="ingredient" type="text" name="ingredient" placeholder="Enter Ingredient"/> </td>
+                <td> <input id="quantity" type="number" name="quantity" placeholder="Enter Quantity"/></td>
+                <td> 
+                    <select class="unit"> 
+                        <option value ="Pounds"> Pounds </option>
+                        <option value ="Pounds"> Case </option>
+                    </select>
+                </td>
+            </tr>  
+        </table>    
+        <button id='add_ingredient'> Add Ingredient </button>
+        <button type='submit' style='display:block'> Submit </button>
+
+
+        <script>
+
+            function delete_row(del_button){
+                $(del_button).closest('tr').remove();
+            }
+        </script>
+    </body>
+
+</html>
+
+
+
+  
+
+

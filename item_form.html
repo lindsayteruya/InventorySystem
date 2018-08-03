@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <title>Enter Item Form </title>
+
+  <script>
+    $(document).ready(function() {
+
+
+      $("button").click(function() {
+        $itemValue = $('#item').val()
+        $('tr:last').append('<td>' + $itemValue + '</td>')
+        $lastCost = $('#last_cost').val()
+        $('tr:last').append('<td>' + '$' + $lastCost + '</td>')
+      });
+
+      $("btn").click(function() {
+        $('#ajax').load('ajax.txt');
+      });
+    });
+  </script>
+
+</head>
+
+<body>
+  <div>
+    <h1> Enter New Items </h1>
+    <table id="table">
+      <tr id="table_row">
+        <td> <input id="item" type="text" name="item" placeholder="Enter Ingredient" /> </td>
+        <td> <input id="last_cost" type="number" name="last_cost" placeholder="Enter Last Cost" /> </td>
+        <td>
+          <select class="unit">
+                            <option value ="Pounds"> Per Pound </option>
+                            <option value ="Pounds"> Per Case </option>
+                        </select>
+        </td>
+      </tr>
+    </table>
+
+    <button id='add_item'> Add Item </button>
+
+    <table class="summary">
+      <h3> Item List </h3>
+      <tr id='table_heading'>
+        <th> Item Name </th>
+        <th> Last Cost </th>
+        <th> Average Cost </th>
+        <th> Unit </th>
+      </tr>
+    </table>
+  </div>
+
+  <div id="ajax">
+    <p> First Content</p>
+  </div>
+  <button id="btn"> Click To Change Content </button>
+
+
+</body>
+
+</html>
